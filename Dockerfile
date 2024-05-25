@@ -1,3 +1,5 @@
-FROM centos:latest
-RUN yum install httpd -y
-COPY . /var/www/html
+FROM kuldeep1904/myweb:v1
+
+COPY index.html /var/www/html/
+
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
